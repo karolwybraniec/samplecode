@@ -1,0 +1,80 @@
+#----------------------------------------------------------------------
+# 'CRS' APPLICATION ENDPOINT CONFIGURATION
+#
+# Route configuration for CRS tests
+#----------------------------------------------------------------------
+
+app_url: "https://confidential-data.org/"
+
+# AUTHENTICATION
+auth_login: "confidential-data"
+auth_pass: "confidential-data"
+
+# ENDPOINTS
+internal_reviews_endpoint_list: "/confidential-data.json?locale={locale}&page={page}&limit={limit}"
+internal_reviews_endpoint: "/confidential-data.json"
+internal_reviews_endpoint_get: "/confidential-data/v1.1/reviews/{review_id}.json"
+internal_endpoint_status: "/confidential-data/v1.1/status.json"
+airline_endpoint: "api/v1.4/confidential-data/{code}.json?page={page}&limit={limit}&locale={locale}"
+airport_endpoint: "api/v1.4/confidential-data/{airport_code}.json?page={page}&limit={limit}&locale={locale}"
+helpful_endpoint: "/api/v1.4/confidential-data/helpful.json"
+airports_stats_endpoint: "/api/v1.4/confidential-data/stats.json?page={page}&limit={limit}"
+airlines_stats_endpoint: "/api/v1.4/confidential-data/stats.json?page={page}&limit={limit}"
+latest_version_endpoint: "api/confidential-data/version.json"
+
+# SORTING
+sorting: "&sortType={sortType}&sortOrder={sortOrder}"
+
+# FILTERING
+filtering: "&filterType[0]={filterType}&filterValue[0]={filterValue}"
+
+# NON EMPTY IDs
+review_id: ['24618', '24613', '24610', '24607', '24606', '24600', '24598', '24595', '24592', '24587', '24585', '24583',
+            '24581', '24577', '24574', '24572', '24569', '24560', '24556', '24554', '24550', '24537', '24531', '24527',
+            '24525']
+
+booking_id: ['FI2LQJ2', 'FI1BBSE', 'FQMT9QB', 'FNAKCPO', 'F6CVJUQ', 'FN2SFMX']
+
+# List of airport's codes that are randomly drawn and put in url
+airport_code: ['KRK','LHR','BFS', 'MAD', 'JFK', 'KTW', 'WAW']
+
+# List of airline's codes that are randomly drawn and put in url. Codes with reviews
+airline_code: ['HV', '0B', 'IB', 'AF', 'G3', 'SK', 'W6', 'BA', 'FR', 'RO', 'AY', 'OS', 'KL', 'OK', 'B6', 'FB', 'AK',
+               'DY', 'U2', 'AC', 'TK', 'AA']
+
+max_reviews_limit: 10
+
+# Data used in helpful endpoint in PUT method
+json_data:
+  objectId: "LO"
+  id: 24606
+
+# JSON used in POST to internal-API
+airline_review_addition:
+  objectId: LO
+  objectType: 1000
+  bookingId: "F{unique_part}"
+  partnerId: ESKY
+  title: Sample title
+  content: Sample content
+  username: Klenz Klenz
+  locale: pl_PL
+  countryCode: PL
+  travelType: 10
+  generalRating: 3
+  categoryRatings:
+    - attrId: 1
+      value: 2
+    - attrId: 106
+      value: 4
+    - attrId: 107
+      value: 3
+    - attrId: 108
+      value: 1
+    - attrId: 109
+      value: 3
+    - attrId: 110
+      value: 2
+    - attrId: 111
+      value: 3
+
